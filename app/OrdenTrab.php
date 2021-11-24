@@ -20,7 +20,7 @@ class OrdenTrab extends Model
         $data = DB::table('ordentrab')
         		  ->join('tipoorden', 'ordentrab.id_tipo', '=', 'tipoorden.id_tipo')
         		  ->join('operadores', 'ordentrab.id_operador', '=', 'operadores.id_operador')
-				  ->select('tipoorden.*','tipoorden.nombre as tipo_orden', 'operadores.nombre as nombre_operador')
+				  ->select('ordentrab.*','tipoorden.nombre as tipo_orden', 'operadores.nombre as nombre_operador')
                   ->orderBy('id_orden','desc')
                   ->paginate(5);
 

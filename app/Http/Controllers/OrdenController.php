@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\OrdenTrab;
 use App\TipoOrden;
+use App\Operador;
 
 class OrdenController extends Controller
 {
@@ -17,9 +18,11 @@ class OrdenController extends Controller
     {
         //
         $ordenes = OrdenTrab::AllOrdenes();
+        $tipos = TipoOrden::AllTipos();
+        $operadores = Operador::AllOperators();
 
         //dd($ordenes);
-        return view('ordenes.ordenes_view',compact('ordenes'));
+        return view('ordenes.ordenes_view',compact('ordenes','tipos','operadores'));
     }
 
     /**

@@ -15,7 +15,7 @@ class OperadorController extends Controller
     public function index()
     {
         //
-        $operadores = Operador::AllOrdenes();
+        $operadores = Operador::AllOperators();
         
         return view('operadores.operadores_view',compact('operadores'));
     }

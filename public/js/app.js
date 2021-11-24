@@ -50673,4 +50673,12 @@ $("#form_orden").on("click","#t-guardar",function(e){
         });
     });
   // funcion llena tablas con los registros ya actualizados
+
+    $("#form_orden").on("keyup","#valor", function(){
+
+        this.value = this.value.replace(/[^0-9,.]/g,'').replace(/,/g, '.');
+
+       // $(this).css("background-color", "pink");
+       // $(this).after( "<span class='text-danger'>Formato no valido</span>" );
+    });
 });
