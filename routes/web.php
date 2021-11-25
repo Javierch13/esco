@@ -13,14 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 //Route::get('/home', 'CoursesController@index')->name('home');
 //Route::get('/','CoursesController@index');
+Route::get('/', 'OperadorController@index');
 
 // Rutas de operadores 
 Route::get('/operadores/index', 'OperadorController@index');
